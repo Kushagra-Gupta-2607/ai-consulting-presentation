@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Automation in Manufacturing: 2025 Implementation Roadmap</title>
+    <meta name="description" content="Comprehensive guide to implementing AI automation in manufacturing with proven ROI strategies and step-by-step roadmap">
+    <meta name="keywords" content="AI automation, manufacturing, Industry 4.0, predictive maintenance, ROI, digital transformation">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800&family=Source+Code+Pro:wght@400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f4c75 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .presentation-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 80px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .slide-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .slide-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #74b9ff, #0984e3, #6c5ce7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00b894, #00a085);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #74b9ff;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #b2bec3;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #fd79a8;
+            font-weight: 500;
+            text-align: center;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        /* Grid Layouts */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, rgba(116, 185, 255, 0.1), rgba(108, 92, 231, 0.1));
+            border: 2px solid rgba(116, 185, 255, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-10px);
+            border-color: #74b9ff;
+            box-shadow: 0 20px 40px rgba(116, 185, 255, 0.2);
+        }
+
+        .metric-value {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        .metric-label {
+            font-size: 1.1rem;
+            color: #ddd;
+            font-weight: 500;
+        }
+
+        .metric-detail {
+            font-size: 0.95rem;
+            color: #b2bec3;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* Process Flow Layouts */
+        .process-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .process-step {
+            background: linear-gradient(135deg, rgba(0, 184, 148, 0.1), rgba(0, 160, 133, 0.1));
+            border: 2px solid rgba(0, 184, 148, 0.3);
+            border-radius: 18px;
+            padding: 25px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: scale(1.02);
+            border-color: #00b894;
+            box-shadow: 0 15px 30px rgba(0, 184, 148, 0.2);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #00b894;
+            margin: 10px 0 15px 0;
+        }
+
+        .step-description {
+            color: #ddd;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Technology Comparison Tables */
+        .comparison-table {
+            width: 100%;
+            margin: 30px 0;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 20px;
+            font-weight: 600;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ddd;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .comparison-table tr:hover {
+            background: rgba(116, 185, 255, 0.1);
+        }
+
+        /* ROI Calculator Sections */
+        .roi-section {
+            background: linear-gradient(135deg, rgba(253, 121, 168, 0.1), rgba(238, 90, 36, 0.1));
+            border: 2px solid rgba(253, 121, 168, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .roi-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fd79a8;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .roi-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .roi-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #fd79a8;
+        }
+
+        .roi-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fd79a8;
+            margin-bottom: 5px;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        .roi-description {
+            color: #b2bec3;
+            font-size: 0.95rem;
+        }
+
+        /* Implementation Timeline */
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #74b9ff, #0984e3);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 80px;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            border-radius: 50%;
+            border: 3px solid #1a1a2e;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #74b9ff;
+        }
+
+        .timeline-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #74b9ff;
+            margin-bottom: 10px;
+        }
+
+        .timeline-duration {
+            font-size: 0.9rem;
+            color: #fd79a8;
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        /* Technology Stack Visualization */
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .tech-category {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .tech-category:hover {
+            border-color: #6c5ce7;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.2);
+        }
+
+        .tech-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #6c5ce7;
+        }
+
+        .tech-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #6c5ce7;
+            margin-bottom: 10px;
+        }
+
+        .tech-description {
+            color: #b2bec3;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Features and Benefits Lists */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, rgba(108, 92, 231, 0.1), rgba(116, 185, 255, 0.1));
+            border: 2px solid rgba(108, 92, 231, 0.3);
+            border-radius: 18px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            border-color: #6c5ce7;
+            box-shadow: 0 20px 40px rgba(108, 92, 231, 0.2);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: #6c5ce7;
+            margin-bottom: 15px;
+        }
+
+        .benefit-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #6c5ce7;
+            margin-bottom: 10px;
+        }
+
+        .benefit-description {
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        /* Call-to-Action Sections */
+        .cta-section {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 25px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .slide {
+                padding: 60px 20px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .metrics-grid,
+            .process-flow,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+
+            .timeline-item {
+                padding-left: 60px;
+            }
+        }
+
+        /* Scroll Animations */
+        .slide {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideInUp 0.8s ease forwards;
+        }
+
+        @keyframes slideInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navigation Dots */
+        .nav-dots {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            margin: 8px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active,
+        .nav-dot:hover {
+            background: #74b9ff;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide 1: Title Slide -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">01</span>
+                <h1>AI Automation in Manufacturing</h1>
+                <p class="subtitle">Complete 2025 Implementation Roadmap & Strategic Guide</p>
+                <p class="tagline">🤖 Transform Your Factory with Proven AI Solutions</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Market Impact & ROI Statistics -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">02</span>
+                <h2>AI Automation Market Impact</h2>
+                <p class="subtitle">Verified ROI Statistics & Market Growth Data</p>
+            </div>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">$20.8B</div>
+                    <div class="metric-label">AI Manufacturing Market by 2028</div>
+                    <div class="metric-detail">45.4% CAGR from $3.2B in 2023</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">30-50%</div>
+                    <div class="metric-label">Downtime Reduction</div>
+                    <div class="metric-detail">Through predictive maintenance AI</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">38%</div>
+                    <div class="metric-label">Profit Margin Increase</div>
+                    <div class="metric-detail">Average improvement by 2035</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">97%</div>
+                    <div class="metric-label">Defect Detection Accuracy</div>
+                    <div class="metric-detail">vs 60-70% manual inspection</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">86%</div>
+                    <div class="metric-label">Revenue Growth</div>
+                    <div class="metric-detail">Companies with AI in production</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">43%</div>
+                    <div class="metric-label">Productivity Doubled</div>
+                    <div class="metric-detail">Organizations using gen AI</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: AI Automation Applications -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">03</span>
+                <h2>Key AI Automation Applications</h2>
+                <p class="subtitle">Where AI Delivers Maximum Impact</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔮</div>
+                    <div class="benefit-title">Predictive Maintenance</div>
+                    <div class="benefit-description">AI predicts equipment failures 30-50% faster, reducing unplanned downtime and extending equipment life by 20-40%</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">👁️</div>
+                    <div class="benefit-title">Quality Control & Inspection</div>
+                    <div class="benefit-description">Computer vision systems achieve 97% defect detection accuracy, reducing waste by 25% and inspection time by 30%</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <div class="benefit-title">Production Optimization</div>
+                    <div class="benefit-description">ML algorithms increase production speed by 30%, improve OEE by 20-25%, and reduce lead times by 15-20%</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔗</div>
+                    <div class="benefit-title">Supply Chain Intelligence</div>
+                    <div class="benefit-description">AI improves demand forecasting accuracy by 85%, cuts inventory costs by 30%, and reduces delivery times by 10-15%</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-title">Energy Optimization</div>
+                    <div class="benefit-description">Smart algorithms reduce factory energy consumption by 20-30%, contributing to sustainability goals and cost savings</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤖</div>
+                    <div class="benefit-title">Collaborative Robotics</div>
+                    <div class="benefit-description">Cobots increase production speed by 30%, reduce material handling costs by 25%, and improve workplace safety</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Technology Stack & Tools -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">04</span>
+                <h2>AI Automation Technology Stack</h2>
+                <p class="subtitle">Essential Tools & Platforms for Implementation</p>
+            </div>
+            <div class="tech-stack">
+                <div class="tech-category">
+                    <div class="tech-icon">🧠</div>
+                    <div class="tech-title">Machine Learning</div>
+                    <div class="tech-description">TensorFlow, PyTorch, Scikit-learn for predictive analytics and pattern recognition</div>
+                </div>
+                <div class="tech-category">
+                    <div class="tech-icon">👁️</div>
+                    <div class="tech-title">Computer Vision</div>
+                    <div class="tech-description">OpenCV, YOLO, AWS Rekognition for quality control and defect detection</div>
+                </div>
+                <div class="tech-category">
+                    <div class="tech-icon">🌐</div>
+                    <div class="tech-title">IoT & Sensors</div>
+                    <div class="tech-description">Real-time data collection for predictive maintenance and monitoring</div>
+                </div>
+                <div class="tech-category">
+                    <div class="tech-icon">☁️</div>
+                    <div class="tech-title">Cloud Platforms</div>
+                    <div class="tech-description">AWS SageMaker, Google AutoML, Azure ML for scalable AI deployment</div>
+                </div>
+                <div class="tech-category">
+                    <div class="tech-icon">🔄</div>
+                    <div class="tech-title">Process Automation</div>
+                    <div class="tech-description">UiPath, Power Automate, Automation Anywhere for workflow optimization</div>
+                </div>
+                <div class="tech-category">
+                    <div class="tech-icon">📱</div>
+                    <div class="tech-title">Edge Computing</div>
+                    <div class="tech-description">Local processing for real-time decision making and reduced latency</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Implementation Roadmap by Company Size -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">05</span>
+                <h2>Implementation Strategy by Company Size</h2>
+                <p class="subtitle">Tailored Approaches for Different Manufacturing Scales</p>
+            </div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Company Size</th>
+                        <th>Starting Point</th>
+                        <th>Investment Range</th>
+                        <th>ROI Timeline</th>
+                        <th>Key Focus Areas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Small (≤$10M revenue)</strong></td>
+                        <td>Predictive maintenance sensors</td>
+                        <td>$50K - $200K</td>
+                        <td>1.5-2.5 years</td>
+                        <td>Equipment monitoring, quality control</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medium ($10M-$100M)</strong></td>
+                        <td>AI-powered quality control</td>
+                        <td>$500K - $2M</td>
+                        <td>2.5-3 years</td>
+                        <td>Process automation, supply chain</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Large ($100M+)</strong></td>
+                        <td>Smart factory integration</td>
+                        <td>$5M - $50M</td>
+                        <td>3-3.5 years</td>
+                        <td>Full automation, digital twins</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Slide 6: 8-Step Implementation Process -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">06</span>
+                <h2>8-Step AI Automation Implementation</h2>
+                <p class="subtitle">Proven Framework for Successful Deployment</p>
+            </div>
+            <div class="process-flow">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Assess Current State</div>
+                    <div class="step-description">Evaluate existing infrastructure, identify pain points, and document current processes</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Data Collection & Preparation</div>
+                    <div class="step-description">Install IoT sensors, clean historical data, and establish data pipelines</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Select AI Tools & Platforms</div>
+                    <div class="step-description">Choose appropriate ML/AI tools based on use cases and technical requirements</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Pilot Project Launch</div>
+                    <div class="step-description">Start with high-impact, low-risk use case to demonstrate value</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-title">System Integration</div>
+                    <div class="step-description">Connect AI tools with ERP, MES, SCADA, and PLC systems</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <div class="step-title">Workflow Automation</div>
+                    <div class="step-description">Set up triggers, alerts, and automated decision-making processes</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">7</div>
+                    <div class="step-title">Monitor & Optimize</div>
+                    <div class="step-description">Track performance metrics, retrain models, and gather user feedback</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">8</div>
+                    <div class="step-title">Scale & Expand</div>
+                    <div class="step-description">Gradually expand automation to other departments and processes</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: ROI Calculator & Cost Breakdown -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">07</span>
+                <h2>ROI Analysis & Cost Breakdown</h2>
+                <p class="subtitle">Financial Impact of AI Automation Implementation</p>
+            </div>
+            <div class="roi-section">
+                <div class="roi-title">📈 Investment vs. Returns Analysis</div>
+                <div class="roi-breakdown">
+                    <div class="roi-item">
+                        <div class="roi-value">30-50%</div>
+                        <div class="roi-description">Reduction in maintenance costs through predictive analytics</div>
+                    </div>
+                    <div class="roi-item">
+                        <div class="roi-value">25%</div>
+                        <div class="roi-description">Waste reduction from AI-powered quality control</div>
+                    </div>
+                    <div class="roi-item">
+                        <div class="roi-value">20-40%</div>
+                        <div class="roi-description">Equipment lifespan extension through optimized maintenance</div>
+                    </div>
+                    <div class="roi-item">
+                        <div class="roi-value">15-20%</div>
+                        <div class="roi-description">Lead time reduction via production optimization</div>
+                    </div>
+                </div>
+            </div>
+            <div class="roi-section">
+                <div class="roi-title">💰 Implementation Cost Factors</div>
+                <div class="roi-breakdown">
+                    <div class="roi-item">
+                        <div class="roi-value">40%</div>
+                        <div class="roi-description">Software licenses and cloud services</div>
+                    </div>
+                    <div class="roi-item">
+                        <div class="roi-value">30%</div>
+                        <div class="roi-description">Hardware and IoT sensor installation</div>
+                    </div>
+                    <div class="roi-item">
+                        <div class="roi-value">20%</div>
+                        <div class="roi-description">Implementation and integration services</div>
+                    </div>
+                    <div class="roi-item">
+                        <div class="roi-value">10%</div>
+                        <div class="roi-description">Training and change management</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Implementation Timeline -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">08</span>
+                <h2>Implementation Timeline</h2>
+                <p class="subtitle">Phased Approach to AI Automation Deployment</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Phase 1: Foundation & Assessment</div>
+                        <div class="timeline-duration">Weeks 1-4</div>
+                        <div class="step-description">Infrastructure assessment, data audit, team formation, and pilot use case selection</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Phase 2: Data Preparation & Tool Selection</div>
+                        <div class="timeline-duration">Weeks 5-12</div>
+                        <div class="step-description">IoT sensor installation, data pipeline setup, AI platform selection, and initial integrations</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Phase 3: Pilot Implementation</div>
+                        <div class="timeline-duration">Weeks 13-24</div>
+                        <div class="step-description">Deploy first AI use case, train models, integrate with existing systems, and test workflows</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Phase 4: Scale & Optimize</div>
+                        <div class="timeline-duration">Weeks 25-52</div>
+                        <div class="step-description">Expand to additional use cases, optimize performance, train workforce, and establish governance</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Industry-Specific Applications -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">09</span>
+                <h2>Industry-Specific AI Applications</h2>
+                <p class="subtitle">Tailored Solutions Across Manufacturing Sectors</p>
+            </div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Industry</th>
+                        <th>Primary AI Applications</th>
+                        <th>ROI Impact</th>
+                        <th>Implementation Focus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Automotive (25% market share)</strong></td>
+                        <td>Predictive maintenance, autonomous assembly, quality control</td>
+                        <td>30% production speed increase</td>
+                        <td>Robotic assembly lines, defect detection</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Electronics (20% market share)</strong></td>
+                        <td>Defect detection, yield optimization, supply chain</td>
+                        <td>90% defect detection improvement</td>
+                        <td>Computer vision, process automation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Aerospace (15% market share)</strong></td>
+                        <td>Generative design, material optimization, safety</td>
+                        <td>30% material usage reduction</td>
+                        <td>Design AI, predictive maintenance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pharmaceuticals (10% market share)</strong></td>
+                        <td>Process optimization, compliance, drug discovery</td>
+                        <td>Faster time-to-market</td>
+                        <td>Regulatory compliance, quality systems</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Food & Beverage (8% market share)</strong></td>
+                        <td>Quality control, inventory management, safety</td>
+                        <td>Reduced food waste</td>
+                        <td>Real-time monitoring, traceability</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Slide 10: Real-World Success Stories -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">10</span>
+                <h2>Real-World Success Stories</h2>
+                <p class="subtitle">Proven Results from Industry Leaders</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏭</div>
+                    <div class="benefit-title">Siemens Manufacturing</div>
+                    <div class="benefit-description"><strong>30% fewer X-ray tests</strong>, 100% quality rate, and $555K capital investment reduction through AI-powered early fault detection</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚗</div>
+                    <div class="benefit-title">Ford Motor Company</div>
+                    <div class="benefit-description"><strong>25% maintenance cost reduction</strong> and 30% equipment lifespan increase using IoT sensors and AI predictive analytics</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-title">General Motors</div>
+                    <div class="benefit-description"><strong>50% downtime reduction</strong> and $1 billion annual maintenance savings through AI-driven predictive maintenance</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏭</div>
+                    <div class="benefit-title">Tesla Manufacturing</div>
+                    <div class="benefit-description"><strong>40% production time reduction</strong> per vehicle through fully automated assembly and AI-driven logistics optimization</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔧</div>
+                    <div class="benefit-title">Johnson & Johnson</div>
+                    <div class="benefit-description">AI-powered data analysis improves <strong>medicine development</strong>, hospital restocking, and targeted treatment creation</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏗️</div>
+                    <div class="benefit-title">Hitachi Manufacturing</div>
+                    <div class="benefit-description">AI integration across <strong>maintenance, safety, supply chain</strong>, and quality assurance for comprehensive optimization</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Challenges & Mitigation Strategies -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">11</span>
+                <h2>Implementation Challenges & Solutions</h2>
+                <p class="subtitle">Common Obstacles and Proven Mitigation Strategies</p>
+            </div>
+            <div class="process-flow">
+                <div class="process-step">
+                    <div class="step-number">⚠️</div>
+                    <div class="step-title">Data Integration Complexity</div>
+                    <div class="step-description"><strong>Solution:</strong> Start with standardized data formats, implement gradual integration, use middleware platforms like MuleSoft</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">👥</div>
+                    <div class="step-title">Workforce Resistance</div>
+                    <div class="step-description"><strong>Solution:</strong> Comprehensive training programs, transparent communication, demonstrate AI as augmentation tool</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">🔒</div>
+                    <div class="step-title">Cybersecurity Concerns</div>
+                    <div class="step-description"><strong>Solution:</strong> Implement zero-trust architecture, regular security audits, AI-powered threat detection</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">💰</div>
+                    <div class="step-title">High Initial Investment</div>
+                    <div class="step-description"><strong>Solution:</strong> Phased implementation, start with high-ROI use cases, leverage cloud platforms for scalability</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">📊</div>
+                    <div class="step-title">Data Quality Issues</div>
+                    <div class="step-description"><strong>Solution:</strong> Data cleaning processes, validation algorithms, establish data governance frameworks</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">⚖️</div>
+                    <div class="step-title">Regulatory Compliance</div>
+                    <div class="step-description"><strong>Solution:</strong> Work with legal teams, implement audit trails, use AI for compliance monitoring</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Getting Started Guide -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">12</span>
+                <h2>Your AI Automation Journey Starts Here</h2>
+                <p class="subtitle">Immediate Action Steps for Implementation</p>
+            </div>
+            <div class="roi-section">
+                <div class="roi-title">🚀 Quick Start Checklist</div>
+                <div class="roi-breakdown">
+                    <div class="roi-item">
+                        <div class="roi-value">Week 1</div>
+                        <div class="roi-description">Conduct infrastructure assessment and identify 1-2 high-impact use cases</div>
+                    </div>
+                    <div class="roi-item">
+                        <div class="roi-value">Week 2</div>
+                        <div class="roi-description">Form cross-functional AI team and secure executive sponsorship</div>
+                    </div>
+                    <div class="roi-item">
+                        <div class="roi-value">Week 3</div>
+                        <div class="roi-description">Evaluate AI platforms (AWS SageMaker, Google AutoML, Azure ML)</div>
+                    </div>
+                    <div class="roi-item">
+                        <div class="roi-value">Week 4</div>
+                        <div class="roi-description">Launch pilot project with predictive maintenance or quality control</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-section">
+                <div class="cta-title">Ready to Transform Your Manufacturing?</div>
+                <div class="cta-subtitle">Join the 60% of manufacturers already using AI in production</div>
+                <a href="#" class="cta-button">Start Your AI Journey Today</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+        <div class="nav-dot active"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+    </div>
+
+    <script>
+        // Simple navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const navDots = document.querySelectorAll('.nav-dot');
+            
+            // Add animation delay to slides
+            slides.forEach((slide, index) => {
+                slide.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            // Navigation dot functionality
+            navDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    slides[index].scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Update active dot
+                    navDots.forEach(d => d.classList.remove('active'));
+                    dot.classList.add('active');
+                });
+            });
+
+            // Update active dot on scroll
+            const observerOptions = {
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const slideIndex = Array.from(slides).indexOf(entry.target);
+                        navDots.forEach(d => d.classList.remove('active'));
+                        navDots[slideIndex].classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            slides.forEach(slide => observer.observe(slide));
+        });
+    </script>
+</body>
+</html>
