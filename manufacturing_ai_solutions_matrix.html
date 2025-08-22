@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturing AI Solutions Matrix: Process Optimization Guide</title>
+    <meta name="description" content="Comprehensive guide to AI solutions for manufacturing challenges across all process areas">
+    <meta name="keywords" content="manufacturing AI, process optimization, quality control, predictive maintenance, smart manufacturing">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #6b73eb 25%, #7078ec 50%, #7481ed 75%, #7985ee 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .background-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px, 60px 60px, 30px 30px;
+            z-index: -1;
+        }
+
+        .presentation-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 100px;
+        }
+
+        .slide-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .slide-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b, #feca57);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            font-family: 'Fira Code', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            text-align: center;
+            line-height: 1.1;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: #feca57;
+            font-weight: 600;
+            text-align: center;
+            font-family: 'Fira Code', monospace;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Process Matrix Grid */
+        .process-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .process-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 30px;
+            backdrop-filter: blur(20px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .process-card:hover::before {
+            left: 100%;
+        }
+
+        .process-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .process-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+            text-align: center;
+        }
+
+        .process-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .challenge-section {
+            background: rgba(255, 107, 107, 0.15);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .challenge-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .challenge-list {
+            list-style: none;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .challenge-list li {
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .challenge-list li::before {
+            content: '▪';
+            position: absolute;
+            left: 0;
+            color: #ff6b6b;
+        }
+
+        .solution-section {
+            background: rgba(72, 187, 120, 0.15);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #48bb78;
+        }
+
+        .solution-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #48bb78;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .solution-list {
+            list-style: none;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .solution-list li {
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .solution-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: 700;
+        }
+
+        /* Value Summary Cards */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .value-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+            transition: all 0.6s ease;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+
+        .value-card:hover::after {
+            width: 200%;
+            height: 200%;
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #feca57;
+        }
+
+        .value-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .value-description {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Implementation Challenges Table */
+        .challenges-table {
+            width: 100%;
+            margin: 40px 0;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .challenges-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px 20px;
+            font-weight: 700;
+            text-align: left;
+            font-size: 1.1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .challenges-table th:first-child {
+            border-top-left-radius: 20px;
+        }
+
+        .challenges-table th:last-child {
+            border-top-right-radius: 20px;
+        }
+
+        .challenges-table td {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .challenges-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .challenges-table tr:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .challenges-table tr:last-child td:first-child {
+            border-bottom-left-radius: 20px;
+        }
+
+        .challenges-table tr:last-child td:last-child {
+            border-bottom-right-radius: 20px;
+        }
+
+        /* Next Steps Section */
+        .next-steps {
+            background: linear-gradient(135deg, rgba(72, 187, 120, 0.2), rgba(56, 178, 172, 0.2));
+            border: 2px solid rgba(72, 187, 120, 0.3);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 40px 0;
+            backdrop-filter: blur(20px);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .step-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 18px;
+            padding: 25px;
+            border-left: 5px solid #48bb78;
+            transition: all 0.3s ease;
+        }
+
+        .step-item:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .step-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #48bb78, #38b2ac);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .step-description {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Platform Recommendations */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .platform-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 18px;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+        }
+
+        .platform-card:hover {
+            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .platform-logo {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #feca57;
+        }
+
+        .platform-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .platform-purpose {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            border-radius: 25px;
+            padding: 50px 40px;
+            text-align: center;
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(238, 90, 36, 0.3);
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 4s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .slide {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            h2 {
+                font-size: 2.2rem;
+            }
+
+            .process-matrix,
+            .value-grid,
+            .steps-grid,
+            .platform-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .challenges-table {
+                font-size: 0.8rem;
+            }
+
+            .challenges-table th,
+            .challenges-table td {
+                padding: 15px 12px;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading Animation */
+        .slide {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideIn 0.8s ease forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navigation Enhancement */
+        .nav-indicator {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .nav-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .nav-dot.active {
+            background: #feca57;
+            border-color: rgba(254, 202, 87, 0.5);
+            transform: scale(1.3);
+        }
+
+        .nav-dot:hover {
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="background-pattern"></div>
+    
+    <div class="presentation-container">
+        <!-- Slide 1: Title Slide -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">Matrix Overview</span>
+                <h1>Manufacturing AI Solutions Matrix</h1>
+                <p class="subtitle">Process Challenges & AI-Powered Solutions Guide</p>
+                <p class="tagline">🏭 Complete Process Optimization Framework</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Production Planning & Scheduling -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">Process 01</span>
+                <h2>Production Planning & Scheduling</h2>
+            </div>
+            <div class="process-matrix">
+                <div class="process-card">
+                    <div class="process-icon">📊</div>
+                    <div class="process-title">Current Challenges</div>
+                    <div class="challenge-section">
+                        <div class="challenge-title">⚠️ Key Issues</div>
+                        <ul class="challenge-list">
+                            <li>Inaccurate demand forecasts leading to poor planning</li>
+                            <li>Under/over-production causing waste and delays</li>
+                            <li>Manual scheduling errors disrupting workflows</li>
+                            <li>Lack of real-time visibility into production capacity</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="process-card">
+                    <div class="process-icon">🤖</div>
+                    <div class="process-title">AI-Powered Solutions</div>
+                    <div class="solution-section">
+                        <div class="solution-title">🎯 AI Implementations</div>
+                        <ul class="solution-list">
+                            <li>AI-powered demand forecasting using historical sales and seasonality patterns</li>
+                            <li>Smart scheduling algorithms optimize machine allocation and reduce downtime</li>
+                            <li>Real-time production monitoring with adaptive scheduling</li>
+                            <li>Predictive analytics for capacity planning and resource allocation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Quality Control & Inspection -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">Process 02</span>
+                <h2>Quality Control & Inspection</h2>
+            </div>
+            <div class="process-matrix">
+                <div class="process-card">
+                    <div class="process-icon">🔍</div>
+                    <div class="process-title">Current Challenges</div>
+                    <div class="challenge-section">
+                        <div class="challenge-title">⚠️ Key Issues</div>
+                        <ul class="challenge-list">
+                            <li>Manual checks are slow and error-prone</li>
+                            <li>Missed defects lead to costly recalls</li>
+                            <li>Inconsistent quality standards across shifts</li>
+                            <li>Limited ability to detect micro-defects</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="process-card">
+                    <div class="process-icon">👁️</div>
+                    <div class="process-title">AI-Powered Solutions</div>
+                    <div class="solution-section">
+                        <div class="solution-title">🎯 AI Implementations</div>
+                        <ul class="solution-list">
+                            <li>Computer vision detects surface defects, cracks, or shape deformities in real-time</li>
+                            <li>Anomaly detection in sensor data identifies hidden quality issues</li>
+                            <li>97% accuracy in defect detection vs 60-70% manual inspection</li>
+                            <li>Automated quality reporting and compliance tracking</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Predictive Maintenance -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">Process 03</span>
+                <h2>Predictive Maintenance</h2>
+            </div>
+            <div class="process-matrix">
+                <div class="process-card">
+                    <div class="process-icon">⚙️</div>
+                    <div class="process-title">Current Challenges</div>
+                    <div class="challenge-section">
+                        <div class="challenge-title">⚠️ Key Issues</div>
+                        <ul class="challenge-list">
+                            <li>Unplanned machine breakdowns causing production delays</li>
+                            <li>High maintenance costs due to reactive approach</li>
+                            <li>Difficulty predicting optimal maintenance timing</li>
+                            <li>Over-maintenance leading to unnecessary expenses</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="process-card">
+                    <div class="process-icon">🔮</div>
+                    <div class="process-title">AI-Powered Solutions</div>
+                    <div class="solution-section">
+                        <div class="solution-title">🎯 AI Implementations</div>
+                        <ul class="solution-list">
+                            <li>AI + IoT sensors predict equipment failure using temperature, vibration, pressure data</li>
+                            <li>Alerts are auto-triggered to schedule maintenance before breakdown</li>
+                            <li>30-50% reduction in unplanned downtime</li>
+                            <li>Equipment lifespan extension by 20-40%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Inventory & Supply Chain -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">Process 04</span>
+                <h2>Inventory & Supply Chain</h2>
+            </div>
+            <div class="process-matrix">
+                <div class="process-card">
+                    <div class="process-icon">📦</div>
+                    <div class="process-title">Current Challenges</div>
+                    <div class="challenge-section">
+                        <div class="challenge-title">⚠️ Key Issues</div>
+                        <ul class="challenge-list">
+                            <li>Overstocking or stockouts affecting cash flow</li>
+                            <li>Inefficient ordering and supplier delays</li>
+                            <li>Poor visibility into supply chain disruptions</li>
+                            <li>Manual demand planning prone to errors</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="process-card">
+                    <div class="process-icon">🔗</div>
+                    <div class="process-title">AI-Powered Solutions</div>
+                    <div class="solution-section">
+                        <div class="solution-title">🎯 AI Implementations</div>
+                        <ul class="solution-list">
+                            <li>Inventory optimization using AI forecasting models</li>
+                            <li>Supplier risk analysis via AI to identify unreliable vendors</li>
+                            <li>Route optimization for delivery using AI algorithms</li>
+                            <li>85% improvement in demand forecasting accuracy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Energy Management -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">Process 05</span>
+                <h2>Energy Management</h2>
+            </div>
+            <div class="process-matrix">
+                <div class="process-card">
+                    <div class="process-icon">⚡</div>
+                    <div class="process-title">Current Challenges</div>
+                    <div class="challenge-section">
+                        <div class="challenge-title">⚠️ Key Issues</div>
+                        <ul class="challenge-list">
+                            <li>High power bills impacting operational costs</li>
+                            <li>Unmonitored energy consumption across facilities</li>
+                            <li>Equipment energy leakage going undetected</li>
+                            <li>Inability to optimize energy usage patterns</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="process-card">
+                    <div class="process-icon">🌱</div>
+                    <div class="process-title">AI-Powered Solutions</div>
+                    <div class="solution-section">
+                        <div class="solution-title">🎯 AI Implementations</div>
+                        <ul class="solution-list">
+                            <li>AI tracks energy usage in real-time across all systems</li>
+                            <li>Identifies patterns & suggests consumption reduction strategies</li>
+                            <li>Triggers alerts for abnormal consumption events</li>
+                            <li>20-30% reduction in factory energy consumption</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Additional Process Areas -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">Processes 06-09</span>
+                <h2>Extended Process Optimization</h2>
+            </div>
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">💼</div>
+                    <div class="value-title">Procurement & Purchase Planning</div>
+                    <div class="value-description">AI uses historical price and usage data to optimize order timing. Predicts raw material shortages and recommends alternatives.</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">👥</div>
+                    <div class="value-title">Workforce Management</div>
+                    <div class="value-description">AI-based shift and workforce scheduling. Computer vision for PPE compliance. Predictive models for safety incidents.</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🧪</div>
+                    <div class="value-title">Product Design / R&D</div>
+                    <div class="value-description">AI-driven generative design to explore multiple design variations. Simulation tools use AI to test stress, heat, performance virtually.</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🎧</div>
+                    <div class="value-title">Customer Service</div>
+                    <div class="value-description">AI-powered chatbots for 24/7 support. Sentiment analysis on customer reviews to improve product quality and service.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: AI Value Summary -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">Value Analysis</span>
+                <h2>How AI Adds Strategic Value</h2>
+            </div>
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">💰</div>
+                    <div class="value-title">Cost Reduction</div>
+                    <div class="value-description">Through predictive maintenance, optimized inventory, and reduced waste. Average 30-50% reduction in maintenance costs.</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <div class="value-title">Quality Enhancement</div>
+                    <div class="value-description">AI ensures consistent inspections and reduces human error. 97% defect detection accuracy vs manual methods.</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <div class="value-title">Efficiency & Speed</div>
+                    <div class="value-description">Automates manual tasks, reduces downtime, and optimizes workflows. 20-30% improvement in production speed.</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">📊</div>
+                    <div class="value-title">Better Decision-Making</div>
+                    <div class="value-description">Real-time insights, forecasts, and prescriptive analytics. 85% improvement in demand forecasting accuracy.</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">📈</div>
+                    <div class="value-title">Scalability</div>
+                    <div class="value-description">Easily expanded to multiple plants or product lines with same models. Consistent performance across locations.</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🛡️</div>
+                    <div class="value-title">Compliance & Safety</div>
+                    <div class="value-description">Ensures rules are followed through monitoring and reporting. Predictive safety incident prevention.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Implementation Challenges -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">Challenge Matrix</span>
+                <h2>Implementation Challenges & Solutions</h2>
+            </div>
+            <table class="challenges-table">
+                <thead>
+                    <tr>
+                        <th>Implementation Challenge</th>
+                        <th>Practical Solution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Lack of quality data</strong><br>Insufficient or poor-quality data for AI training</td>
+                        <td>Start small, clean existing data, and install IoT sensors for real-time inputs. Begin with pilot projects to build data foundation.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Resistance to change</strong><br>Employee concerns about job displacement</td>
+                        <td>Train staff and involve them early in AI adoption. Emphasize AI as augmentation tool, not replacement.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>High upfront cost</strong><br>Significant initial investment requirements</td>
+                        <td>Pilot low-cost AI projects first using cloud services or low-code platforms. Start with high-ROI use cases.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Integration with legacy systems</strong><br>Compatibility issues with existing infrastructure</td>
+                        <td>Use middleware or APIs to bridge AI with ERP/MES/SCADA systems. Gradual integration approach.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AI Skill Gaps</strong><br>Lack of internal AI expertise</td>
+                        <td>Upskill internal team or partner with AI consultants/firms. Leverage cloud-based AI platforms for easier adoption.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cybersecurity concerns</strong><br>Data security and privacy risks</td>
+                        <td>Implement robust security frameworks, regular audits, and AI-powered threat detection systems.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Slide 10: Next Steps & Platform Recommendations -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-number">Implementation Guide</span>
+                <h2>Your AI Implementation Roadmap</h2>
+            </div>
+            <div class="next-steps">
+                <h3 style="text-align: center; color: #48bb78; margin-bottom: 30px;">✅ Immediate Next Steps</h3>
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Pick High-Impact Use Case</div>
+                        <div class="step-description">Start with predictive maintenance or quality inspection for maximum ROI and visible results.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Conduct Proof of Concept</div>
+                        <div class="step-description">Use internal data to validate AI solution effectiveness before full-scale implementation.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-title">Select AI Platform</div>
+                        <div class="step-description">Choose appropriate cloud-based AI services based on your specific use case and technical requirements.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-title">Monitor & Scale</div>
+                        <div class="step-description">Track performance metrics, fine-tune models, and gradually expand to other processes.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <h3 style="text-align: center; color: #feca57; margin-bottom: 25px;">🚀 Recommended AI Platforms</h3>
+                <div class="platform-grid">
+                    <div class="platform-card">
+                        <div class="platform-logo">☁️</div>
+                        <div class="platform-name">AWS Lookout for Equipment</div>
+                        <div class="platform-purpose">Predictive Maintenance</div>
+                    </div>
+                    <div class="platform-card">
+                        <div class="platform-logo">🧠</div>
+                        <div class="platform-name">Google AutoML</div>
+                        <div class="platform-purpose">Custom AI Models</div>
+                    </div>
+                    <div class="platform-card">
+                        <div class="platform-logo">⚡</div>
+                        <div class="platform-name">Microsoft Power Platform</div>
+                        <div class="platform-purpose">Process Automation</div>
+                    </div>
+                    <div class="platform-card">
+                        <div class="platform-logo">🔍</div>
+                        <div class="platform-name">Azure Computer Vision</div>
+                        <div class="platform-purpose">Quality Control</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Call to Action -->
+        <div class="slide">
+            <div class="cta-section">
+                <div class="cta-title">Ready to Transform Your Manufacturing?</div>
+                <div class="cta-subtitle">Join the 60% of manufacturers already leveraging AI for competitive advantage</div>
+                <a href="#" class="cta-button">Start Your AI Journey</a>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; color: rgba(255, 255, 255, 0.8);">
+                <p style="font-size: 1.1rem; margin-bottom: 20px;">🎯 <strong>Quick ROI Calculator:</strong></p>
+                <div class="value-grid" style="margin-top: 30px;">
+                    <div class="value-card">
+                        <div class="value-icon">📊</div>
+                        <div class="value-title">Predictive Maintenance</div>
+                        <div class="value-description">30-50% cost reduction<br>20-40% equipment life extension</div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">👁️</div>
+                        <div class="value-title">Quality Control</div>
+                        <div class="value-description">97% defect detection<br>25% waste reduction</div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">⚡</div>
+                        <div class="value-title">Energy Management</div>
+                        <div class="value-description">20-30% consumption reduction<br>Real-time optimization</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Indicator -->
+    <div class="nav-indicator">
+        <div class="nav-dot active"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+    </div>
+
+    <script>
+        // Enhanced presentation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const navDots = document.querySelectorAll('.nav-dot');
+            
+            // Stagger slide animations
+            slides.forEach((slide, index) => {
+                slide.style.animationDelay = `${index * 0.2}s`;
+            });
+
+            // Enhanced navigation
+            navDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    slides[index].scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                    updateActiveDot(index);
+                });
+            });
+
+            function updateActiveDot(activeIndex) {
+                navDots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === activeIndex);
+                });
+            }
+
+            // Intersection Observer for automatic navigation updates
+            const observerOptions = {
+                threshold: 0.6,
+                rootMargin: '-10% 0px -10% 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const slideIndex = Array.from(slides).indexOf(entry.target);
+                        updateActiveDot(slideIndex);
+                    }
+                });
+            }, observerOptions);
+
+            slides.forEach(slide => observer.observe(slide));
+
+            // Enhanced hover effects for cards
+            const cards = document.querySelectorAll('.process-card, .value-card, .platform-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = this.style.transform + ' scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = this.style.transform.replace(' scale(1.02)', '');
+                });
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                const currentActive = document.querySelector('.nav-dot.active');
+                const currentIndex = Array.from(navDots).indexOf(currentActive);
+                
+                if (e.key === 'ArrowDown' && currentIndex < navDots.length - 1) {
+                    navDots[currentIndex + 1].click();
+                } else if (e.key === 'ArrowUp' && currentIndex > 0) {
+                    navDots[currentIndex - 1].click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
